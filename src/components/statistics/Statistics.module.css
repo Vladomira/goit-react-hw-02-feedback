@@ -1,0 +1,15 @@
+.statistics {
+  background-color: aliceblue;
+}
+.statistics__list {
+  display: flex;
+  flex-direction: column;
+}
+.statistics__item {
+  color: #61dafb;
+}
+.statistics__vote {
+  color: chocolate;
+  background: cornflowerblue;
+  width: 20px;
+}
