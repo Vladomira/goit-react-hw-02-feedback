@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import "./styles/statistics.scss";
 
-export default function Section({ title }) {
+export default function Section({ title, children }) {
   return (
-    <section>
+    <section className="section">
       <h1 className="title__main">{title}</h1>
+      {children}
     </section>
   );
 }

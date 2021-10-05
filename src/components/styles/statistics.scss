@@ -31,12 +31,18 @@
     }
   }
 }
+.section {
+  margin-left: auto;
+  margin-right: auto;
+}
 .title {
+  text-align: center;
   &__main {
     color: #162879;
   }
   &__notification {
     color: #162879;
+    text-align: center;
   }
 }
 .statistics {

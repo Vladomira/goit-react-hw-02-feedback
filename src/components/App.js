@@ -44,42 +44,29 @@ class App extends Component {
     const percentage = this.countPositiveFeedbackPercentage();
     return (
       <Container>
-        <Section title="Please leave feedback"></Section>
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onLeaveFeedback={this.handleIncrementVote}
-        />
-        <Section title="Statistics"> </Section>
-        <Notification message="No feedback given"></Notification>
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={percentage}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.handleIncrementVote}
+          />
+        </Section>
+
+        <Section title="Statistics">
+          {total === 0 ? (
+            <Notification message="No feedback given"></Notification>
+          ) : (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={percentage}
+            />
+          )}
+        </Section>
       </Container>
     );
   }
 }
 
 export default App;
-// =====
-
-// =====
-//  {/* {Object.values(this.state).map((val) =>
-//             val > 0 ? ( */}
-// {/* ) */}
-//       {/* )} */}
-//       {/* {total > 0 ? (
-//           <Statistics
-//             good={good}
-//             neutral={neutral}
-//             bad={bad}
-//             total={total}
-//             positivePercentage={percentage}
-//           />
-//         ) : (
-//           <Notification message="No feedback given"></Notification>
-//         )} */}
-//       {/* </Section> */}
