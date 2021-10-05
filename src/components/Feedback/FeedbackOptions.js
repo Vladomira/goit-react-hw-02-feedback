@@ -1,70 +1,76 @@
-// import PropTypes from "prop-types";
-// import shortid from 'shortid';
+import PropTypes from "prop-types";
 // [option]: state[option] + 1,
-import st from "./statistics/Statistics.module.css";
-// import Statistics from "./statistics/Statistiсs";
+import "../styles/statistics.scss";
 import React, { Component } from "react";
 
 class FeedbackOptions extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  static defaultProps = {
+    options: PropTypes.array.isRequired,
+    // good: PropTypes.number.isRequired,
+    // neutral: PropTypes.number.isRequired,
+    // bad: PropTypes.number.isRequired,
   };
-
-  handleIncrementVote = (evt) => {
-    const { target } = evt;
-    this.setState((prevState) => {
-      // console.log(this.state.value, "state");
-
-      return {
-        [target.textContent]: prevState[target.textContent] + 1,
-      };
-    });
-  };
-
   render() {
     const { options } = this.props;
     return (
-      <div>
-        <h1>Please leave feedback</h1>
+      <div className="btn__block">
         {options.map((el) => (
-          //  btnId = shortid.generate()
           <button
             type="button"
-            className={st.btn}
+            className="btn__item"
             id={el}
             key={el}
-            onClick={this.handleIncrementVote}
+            onClick={this.props.onLeaveFeedback}
           >
             {el}
           </button>
         ))}
-        {/* <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-        /> */}
-
-        {/* <div className={st.statistics}>
-          <h2>Statistics</h2>
-          <ul className={st.statistics__list}>
-            {options.map((el) => (
-              // const itemId = shortid.generate()
-              <li className={st.statistics__item} id={el} key={el}>
-                {el}:
-                <span className={st.statistics__vote}>{this.state.value}.</span>
-              </li>
-            ))} */}
-        {/* <li> Total: <span>{}</span>   </li> */}
-        {/* {/* <li>Positive feedback: <span>{}%</span></li> */}
-        {/* </ul>
-        </div> */}
       </div>
     );
   }
 }
 export default FeedbackOptions;
+// render() {
+//   const { options } = this.props;
+//   return (
+//     <div>
+//       <h1>Please leave feedback</h1>
+//       {options.map((el) => (
+//         //  btnId = shortid.generate()
+
+//         <button
+//           type="button"
+//           className={st.btn}
+//           id={el}
+//           key={el}
+//           onClick={this.handleIncrementVote}
+//         >
+//           {el}
+//         </button>
+//       ))}
+//       {/* <Statistics
+//         good={this.state.good}
+//         neutral={this.state.neutral}
+//         bad={this.state.bad}
+//       /> */}
+
+//       {/* <div className={st.statistics}>
+//         <h2>Statistics</h2>
+//         <ul className={st.statistics__list}>
+//           {options.map((el) => (
+//             // const itemId = shortid.generate()
+//             <li className={st.statistics__item} id={el} key={el}>
+//               {el}:
+//               <span className={st.statistics__vote}>{this.state.value}.</span>
+//             </li>
+//           ))} */}
+//       {/* <li> Total: <span>{}</span>   </li> */}
+//       {/* {/* <li>Positive feedback: <span>{}%</span></li> */}
+//       {/* </ul>
+//       </div> */}
+//     </div>
+//   );
+// }
 
 // =============
 // / onAction = () => {
