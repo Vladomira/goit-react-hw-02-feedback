@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-// import "../styles/statistics.scss";
+import "./styles/statistics.scss";
 
 class Notification extends Component {
   static defaultProps = {
@@ -9,7 +9,7 @@ class Notification extends Component {
   render() {
     const { message } = this.props;
     return (
-      <section>
+      <section className="section">
         <h3 className="title__notification">{message}</h3>
       </section>
     );
