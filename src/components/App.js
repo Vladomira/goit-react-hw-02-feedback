@@ -31,11 +31,7 @@ class App extends Component {
       (this.state.good / this.countTotalFeedback()) * 100
     );
 
-    if (isNaN(positivePercentage)) {
-      return "there will be a";
-    } else {
-      return positivePercentage;
-    }
+    return positivePercentage;
   };
 
   render() {

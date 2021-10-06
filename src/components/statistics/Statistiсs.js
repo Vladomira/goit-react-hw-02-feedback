@@ -23,7 +23,7 @@ Statistics.propTypes = {
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  // positivePercentage: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
 export default Statistics;
 // ==============
@@ -43,15 +43,3 @@ export default Statistics;
 //     );
 //   }
 // }
-
-// ===============
-///
-//  {/* {Object.keys(this.props).map((el) => (
-//             // const itemId = shortid.generate()
-//             <li className={st.statistics__item} id={el} key={el}>
-//               {el}:
-//               <span className={st.statistics__vote}>{this.props.value}.</span>;
-//             </li>
-//           ))} */}
-//           {/* <li> Total: <span>{}</span>   </li> */}
-//           {/* {/* <li>Positive feedback: <span>{}%</span></li> */}
